@@ -38,7 +38,7 @@ public class UpdateStudent extends HttpServlet {
 		student.setName(name);
 		student.setEmail(email);
 		student.setContact_No(contact);
-//		student.setAdmin(AdminAllData);
+		student.setAdmin(AdminAllData);
 		
 		
 		Student_DAO dao=new Student_DAO();

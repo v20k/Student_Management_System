@@ -9,6 +9,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import student_management_system.dto.Admin;
 import student_management_system.dto.Student;
 
 public 
@@ -42,6 +43,12 @@ class Student_DAO {
 		transaction.begin();
 		manager.remove(a);
 		transaction.commit();
+	}
+	
+	public List<Student> getAllStudents(Admin admin) {
+		Query query = manager.createQuery("select s from Student s where s.admin=?1");
+		query.setParameter(1, admin);
+		return query.getResultList();
 	}
 	
 }

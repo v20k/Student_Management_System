@@ -1,3 +1,4 @@
+<%@page import="student_management_system.dao.Admin_DAO"%>
 <%@page import="student_management_system.dto.Admin"%>
 <% Admin AdminAllData=(Admin) session.getAttribute("AdminAllData"); 
 if(AdminAllData!=null){
@@ -41,7 +42,7 @@ body{
  --%>
 <%
 Student_DAO dao=new Student_DAO();
-List<Student> res= dao.getStudents();
+List<Student> res= dao.getAllStudents(AdminAllData);
 /* List <Student> res= (List) request.getAttribute("Students"); */
 for(Student r:res) { %>
 
